@@ -1,0 +1,3 @@
+something
+something else
+write before read
