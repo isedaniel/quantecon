@@ -1,33 +1,18 @@
-def vproduct(x, y):
-    """Given two vectors x and y, gets the inner product"""
-    total = 0
-    for i, j in zip(x, y):
-        total += i*j
-    return total
+# again but with comprenhension instead of functions
+xtuple = (1, 2, 3)
+ytuple = (2, 3, 4)
+
+s = sum(x * y for x, y in zip(xtuple, ytuple))
+test = "Solved" if s == 20 else f"Expected 20 but got { s }"
+print(f"inner product: { test }")
 
 
-x = (1, 2, 3)
-y = (2, 3, 4)
-print(f"vproduct: { vproduct(x, y) }")
-
-
-def iseven(n):
-    """return True if n is even"""
-    return n % 2 == 0
-
-
-even = len([n for n in range(100) if iseven(n)])
-print(f"even: { even }")
-
-
-def evenpairs(pairs):
-    total = 0
-
-    for x, y in pairs:
-        if iseven(x) and iseven(y):
-            total += 1
-    return total
+s = sum(1 for x in range(100) if x % 2 == 0)
+test = "Solved" if s == 50 else f"Expected 50 but got { s }"
+print(f"even numbers: { test }")
 
 
 pairs = ((2, 5), (4, 2), (9, 8), (12, 10))
-print(f"even pairs: { evenpairs(pairs) }")
+s = sum(1 for x, y in pairs if x % 2 == 0 and y % 2 == 0)
+test = "Solved" if s == 2 else f"Expected 2 but got { s }"
+print(f"pairs: { test }")
