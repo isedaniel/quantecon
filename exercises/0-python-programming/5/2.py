@@ -1,12 +1,7 @@
 def p(x, coeff):
-    total = 0
-    for i, c in enumerate(coeff):
-        total += c * x ** i
-        print(f"{c * x ** i} = {c} * {x} ** {i}")
-        print(f"total = {total}")
-    return total
+    return sum(a * x**i for i, a in enumerate(coeff))
 
 
-coeff = (1, 2, 3)
-x = 2
+coeff = (2, 4)
+x = 1
 print(p(x, coeff))
