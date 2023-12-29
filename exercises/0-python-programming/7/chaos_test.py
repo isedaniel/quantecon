@@ -1,5 +1,15 @@
 import chaos
+import matplotlib.pyplot as plt
 
-ch = chaos.Chaos(0.1, 4.0)
-seq = ch.generate_sequence(5)
-print(seq)
+fig, ax = plt.subplots()
+ch = chaos.Chaos(0.1, 4)
+r = 2.5
+while r < 4:
+    ch.r = r
+    t = ch.generate_sequence(1000)[950:]
+    ax.plot([r] * len(t), t, 'b.', ms=0.6)
+    r = r + 0.005
+
+ax.set_xlabel('$r$', fontsize=16)
+ax.set_ylabel('$x_t$', fontsize=16)
+plt.show()
